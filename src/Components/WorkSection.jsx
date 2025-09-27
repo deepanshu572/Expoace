@@ -34,7 +34,7 @@ const WorkSection = () => {
         </motion.h3>
       </div>
 
-      <p className=" sm:hidden text-[18px] font1 ">
+      <p className=" sm:hidden text-[18px] font1  ">
         Highlights of cases that we passionately built with forward-thinking
         clients and friends over the years.
       </p>
