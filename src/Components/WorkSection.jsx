@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 
 const WorkSection = () => {
   return (
@@ -19,36 +20,51 @@ const WorkSection = () => {
         </svg>{" "}
         Featured Projects
       </p>
-      <h2 className="text-7xl font2 px-2 pb-6 sm:text-[14rem] sm:px-20">
-        Work
-      </h2>
-      <p className=" sm:hidden text-[18px] font3 ">
+      <div className="  w-fit h-fit overflow-hidden ">
+        <motion.h3
+          className="origin-top-left text-7xl font2 px-2 pb-6 sm:text-[14rem] sm:px-20"
+          initial={{ y: "40%", rotate: 90, opacity: 0 }}
+          whileInView={{ y: 0, rotate: 0, opacity: 1 }}
+          transition={{
+            ease: [0.22, 1, 0.36, 1],
+            duration: 1.3,
+          }}
+        >
+          Work
+        </motion.h3>
+      </div>
+
+      <p className=" sm:hidden text-[18px] font1 ">
         Highlights of cases that we passionately built with forward-thinking
         clients and friends over the years.
       </p>
 
       <div className="first_div sm:flex justify-evenly ">
         <div className="cards_wrap py-5">
-          <div className="cards relative h-[27rem] sm:h-[40rem] ">
-            <div className="card_img  hover:opacity-0 z-1 absolute hidden sm:block top-0 left-0 w-full h-full">
+          <div className="overflow-hidden cards relative h-[27rem] sm:h-[40rem] ">
+            <motion.div
+              data-scroll
+              data-scroll-speed="-.2"
+              className="card_img  hover:opacity-0 z-1 absolute hidden sm:block top-0 left-0 w-full h-full"
+            >
               <img
                 className=" w-full h-full object-cover"
                 src="https://a.storyblok.com/f/133769/2400x2990/729680ed7f/ottografie-2025-hero.jpg/m/1300x1620/filters:quality(90)"
                 alt=""
               />
-            </div>
+            </motion.div>
             <div className="card_video w-full h-full">
               <video
-              loop
-              autoPlay
-              muted
+                loop
+                autoPlay
+                muted
                 className="w-full h-full object-cover"
                 src="https://player.vimeo.com/progressive_redirect/playback/1047169994/rendition/720p/file.mp4?loc=external&log_user=0&signature=780c70237c241a1fe7a4b3837cad974ed7fb98f38cd2e6f912752ff9e44107ee"
               ></video>
             </div>
           </div>
-          <p class="info sm:hidden">
-            <span class="info-line flex flex-col pt-2  ">
+          <p className="info sm:opacity-0">
+            <span className="info-line flex flex-col pt-2  ">
               <strong className="font1 text-[18px]">Ottografie</strong>
               <small className="text-[15px] font2 text-gray-600">
                 Seamless Photographic Journey
@@ -78,8 +94,12 @@ const WorkSection = () => {
             clients and friends over the years.
           </p>
           <div className="cards_wrap py-5 sm:mt-35">
-            <div className="cards relative h-[27rem]">
-              <div className="card_img  hover:opacity-0 z-1 absolute hidden sm:block top-0 left-0 w-full h-full">
+            <div className="overflow-hidden cards relative h-[27rem]">
+              <div
+                data-scroll
+                data-scroll-speed="-.2"
+                className="card_img  hover:opacity-0 z-1 absolute hidden sm:block top-0 left-0 w-full h-full"
+              >
                 <img
                   className=" w-full h-full "
                   src="https://a.storyblok.com/f/133769/2409x3000/c155d3e27e/amaterasu-hero.jpg/m/1300x1619/filters:quality(90)"
@@ -88,16 +108,16 @@ const WorkSection = () => {
               </div>
               <div className="card_video w-full h-full">
                 <video
-                loop
-                autoPlay
-                muted
+                  loop
+                  autoPlay
+                  muted
                   className="w-full h-full object-cover"
                   src="https://player.vimeo.com/progressive_redirect/playback/1020697798/rendition/720p/file.mp4?loc=external&log_user=0&signature=cd45f23683db91c40f08a3f4a31ba153f1e93eac3d4f98cb3ca4b651b8830d04"
                 ></video>
               </div>
             </div>
-            <p class="info sm:hidden">
-              <span class="info-line flex flex-col pt-2  ">
+            <p className="info sm:opacity-0">
+              <span className="info-line flex flex-col pt-2  ">
                 <strong className="font1 text-[18px]">Ottografie</strong>
                 <small className="text-[15px] font2 text-gray-600">
                   Seamless Photographic Journey
@@ -109,26 +129,30 @@ const WorkSection = () => {
       </div>
       <div className="second_div sm:flex justify-center items-end sm:gap-10">
         <div className="cards_wrap py-5">
-          <div className="cards relative h-[27rem] sm:h-[18rem]">
-            <div className="card_img  hover:opacity-0 z-1 absolute hidden sm:block top-0 left-0 w-full h-full">
+          <div className="overflow-hidden cards relative h-[27rem] sm:h-[18rem]">
+            <motion.div
+              data-scroll
+              data-scroll-speed="-.2"
+              className="card_img  hover:opacity-0 z-1 absolute hidden sm:block top-0 left-0 w-full h-full"
+            >
               <img
                 className=" w-full h-full"
                 src="https://a.storyblok.com/f/133769/2409x3000/cfd16e1a58/cambium-carbon-hero.jpg/m/1300x1619/filters:quality(90)"
                 alt=""
               />
-            </div>
+            </motion.div>
             <div className="card_video w-full h-full">
               <video
-              loop
-              autoPlay
-              muted
+                loop
+                autoPlay
+                muted
                 className="w-full h-full object-cover"
                 src="https://player.vimeo.com/progressive_redirect/playback/1001982172/rendition/720p/file.mp4?loc=external&log_user=0&signature=b92eb1ab8119f2ffaaa03f075ef271714f5ee63065ee8d29f4e188ce30202de0"
               ></video>
             </div>
           </div>
-          <p class="info sm:hidden">
-            <span class="info-line flex flex-col pt-2  ">
+          <p className="info sm:opacity-0">
+            <span className="info-line flex flex-col pt-2  ">
               <strong className="font1 text-[18px]">Ottografie</strong>
               <small className="text-[15px] font2 text-[#0d0e1399]">
                 Seamless Photographic Journey
@@ -137,26 +161,30 @@ const WorkSection = () => {
           </p>
         </div>
         <div className="cards_wrap py-5">
-          <div className="cards relative h-[27rem] sm:h-[35rem]">
-            <div className="card_img absolute hover:opacity-0 z-1 hidden sm:block top-0 left-0 w-full h-full">
+          <div className="overflow-hidden cards relative h-[27rem] sm:h-[35rem]">
+            <motion.div
+              data-scroll
+              data-scroll-speed="-.2"
+              className="card_img absolute hover:opacity-0 z-1 hidden sm:block top-0 left-0 w-full h-full"
+            >
               <img
                 className=" w-full h-full"
                 src="https://a.storyblok.com/f/133769/2400x2990/540fb12941/columbia-pictures-thumbnail.jpg/m/1300x1620/filters:quality(90)"
                 alt=""
               />
-            </div>
+            </motion.div>
             <div className="card_video w-full h-full">
               <video
-              loop
-              autoPlay
-              muted
+                loop
+                autoPlay
+                muted
                 className="w-full h-full"
                 src="https://player.vimeo.com/progressive_redirect/playback/927016456/rendition/720p/file.mp4?loc=external&log_user=0&signature=270ce5ba6bf44a717c74cf85de5f3de1d33a36ba5205b660e5e23b873199d71a"
               ></video>
             </div>
           </div>
-          <p class="info sm:hidden">
-            <span class="info-line flex flex-col pt-2  ">
+          <p className="info sm:opacity-0">
+            <span className="info-line flex flex-col pt-2  ">
               <strong className="font1 text-[18px]">Ottografie</strong>
               <small className="text-[15px] font2 text-[#0d0e1399]">
                 Seamless Photographic Journey
