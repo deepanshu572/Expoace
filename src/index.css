@@ -41,7 +41,7 @@ body {
   background: url('./assets/img/homeBg.jpeg');
   background-size: cover;
   background-position: center; */
-   overflow-x: hidden;
+   /* overflow-x: hidden; */
 
 }
 
@@ -53,7 +53,7 @@ body {
   background: url('./assets/img/homeBg.jpeg');
   background-size: cover;
   background-position: center; */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 /* .img_hero{

@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import NavBar from "./Components/NavBar";
 import HeroSection from "./Components/HeroSection";
-import LocomotiveScroll from 'locomotive-scroll';
+import LocomotiveScroll from "locomotive-scroll";
 import WorkSection from "./Components/WorkSection";
 import PlayReel from "./Components/PlayReel";
 import ImageAnimation from "./Components/ImageAnimation";
 import Footer from "./Components/Footer";
+// import gsap from "gsap/all";
 
 const App = () => {
+  const locomotiveScroll = new LocomotiveScroll();
 
-const locomotiveScroll = new LocomotiveScroll();
+
   return (
     <React.Fragment>
       {/* <div
@@ -20,14 +22,13 @@ const locomotiveScroll = new LocomotiveScroll();
       </div> */}
       <div
         className="container_main "
-        // onMouseMove={(dets) => coursourAnimation(dets)}
       >
         <NavBar />
         <HeroSection />
         <WorkSection />
         <PlayReel />
         <ImageAnimation />
-        <Footer/>
+        <Footer />
       </div>
     </React.Fragment>
   );
