@@ -5,10 +5,19 @@ import { motion } from "motion/react";
 const HeroSection = () => {
   return (
     <div className="container px-6 h-[150vh] sm:h-[250vh] relative ">
-      <div className="w-full h-full overflow-hidden">
+      <div className="w-full hidden sm:block h-full overflow-hidden">
         <img
         data-scroll
         data-scroll-speed="-2"
+          className="img_hero object-cover  absolute top-0 left-0 w-full h-full z-[-1] "
+          src={heroBg}
+          alt=""
+        />
+      </div>
+      <div className="w-full h-full sm:hidden  overflow-hidden">
+        <img
+        data-scroll
+        data-scroll-speed="-1"
           className="img_hero object-cover  absolute top-0 left-0 w-full h-full z-[-1] "
           src={heroBg}
           alt=""
@@ -27,7 +36,7 @@ const HeroSection = () => {
                   className="origin-top-left"
                   initial={{ y: 100, rotate: 90 ,  opacity: 0 }}
                   animate={{ y: 0, rotate: 0 , opacity: 1 }}
-                  transition={{ ease: [0.22, 1, 0.36, 1], duration: 1.3 , delay: 1 + index * 0.3}}
+                  transition={{ ease: [0.22, 1, 0.36, 1], duration: 1.3 , delay: 1 + index * 0.1}}
                 >
                   {item}
                 </motion.h3>

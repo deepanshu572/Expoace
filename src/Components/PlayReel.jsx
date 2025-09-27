@@ -1,8 +1,54 @@
-import React from "react";
+import gsap, { ScrollTrigger } from "gsap/all";
+import React, { useEffect, useRef } from "react";
 
 const PlayReel = () => {
+  const playReel = useRef(null);
+  const video = useRef(null);
+  const text1 = useRef(null);
+  const text2 = useRef(null);
+  const icon = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: playReel.current,
+        top: "0 0",
+        pin: true,
+        scrub: 1,
+      },
+    });
+    tl
+    .to(video.current, {
+      width: "100%",
+      height: "100%",
+      ease: "power4.out",
+    },'a')
+    .to(text1.current,{
+      x: "-100%",
+    },'a')
+    .to(text2.current,{
+      x: "100%",
+    },'a')
+    .to(icon.current,{
+      scale: 2,
+    },'a')
+  }, [playReel]);
+
   return (
-    <div className="w-full relative h-[100vh] bg-black flex items-center justify-center text-white overflow-y-hidden ">
+    <div
+      ref={playReel}
+      className="w-full relative h-[100vh] bg-black flex items-center justify-center text-white overflow-y-hidden "
+    >
+      <div className="wrap  " ref={video}>
+        <video
+          loop
+          autoPlay
+          muted
+          className="w-full h-full object-cover"
+          src="https://player.vimeo.com/progressive_redirect/playback/914803778/rendition/1080p/file.mp4?loc=external&log_user=0&signature=5344c0e4fea63ca54bb433621ca0be7b9470b475583fa68b26de2b6e380a390a"
+        ></video>
+      </div>
       <div className="text absolute top-0 left-0 bg-[#00000085] sm:pb-10 pb-25 w-full h-full flex  justify-between  items-center  flex-col">
         <div className="head flex justify-center items-center gap-2 p-4 sm:py-10 py-30 pb-0 font3 ">
           <svg
@@ -20,8 +66,8 @@ const PlayReel = () => {
           </svg>
           <p>Work In motion</p>
         </div>
-        <div className="play_reel flex items-center justify-center text-6xl sm:text-9xl font2 ">
-          <h2 className="">Play</h2>
+        <div className="play_reel flex items-center justify-center text-5xl sm:text-8xl font2 ">
+          <h2 className="" ref={text1}>Play</h2>
           <svg
             viewBox="0 0 86 86"
             fill="none"
@@ -29,6 +75,7 @@ const PlayReel = () => {
             className="icon w-15 h-15"
             data-v-65273f07=""
             style={{ opacity: "0.2315" }}
+            ref={icon}
           >
             <circle
               opacity="0.4"
@@ -44,7 +91,7 @@ const PlayReel = () => {
               data-v-65273f07=""
             ></path>
           </svg>
-          <h2>Reel</h2>
+          <h2 ref={text2} >Reel</h2>
         </div>{" "}
         <div className="desc sm:w-[30%] text-[15px] px-6 font3">
           <p className="text-center">
@@ -53,13 +100,6 @@ const PlayReel = () => {
           </p>
         </div>
       </div>
-      <video
-        loop
-        autoPlay
-        muted
-        className="w-20 h-20"
-        src="https://player.vimeo.com/progressive_redirect/playback/914803778/rendition/1080p/file.mp4?loc=external&log_user=0&signature=5344c0e4fea63ca54bb433621ca0be7b9470b475583fa68b26de2b6e380a390a"
-      ></video>
     </div>
   );
 };

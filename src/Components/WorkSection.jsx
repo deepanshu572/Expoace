@@ -23,8 +23,9 @@ const WorkSection = () => {
       <div className="  w-fit h-fit overflow-hidden ">
         <motion.h3
           className="origin-top-left text-7xl font2 px-2 pb-6 sm:text-[14rem] sm:px-20"
-          initial={{ y: "40%", rotate: 90, opacity: 0 }}
-          whileInView={{ y: 0, rotate: 0, opacity: 1 }}
+          initial={{ y: "40%", opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{
             ease: [0.22, 1, 0.36, 1],
             duration: 1.3,
@@ -42,10 +43,11 @@ const WorkSection = () => {
       <div className="first_div sm:flex justify-evenly ">
         <div className="cards_wrap py-5">
           <div className="overflow-hidden cards relative h-[27rem] sm:h-[40rem] ">
-            <motion.div
-              data-scroll
+            <motion.div 
+            whileHover={{opacity:0}}
+              data-scroll       
               data-scroll-speed="-.2"
-              className="card_img  hover:opacity-0 z-1 absolute hidden sm:block top-0 left-0 w-full h-full"
+              className="card_img   z-1 absolute hidden sm:block top-0 left-0 w-full h-full"
             >
               <img
                 className=" w-full h-full object-cover"
@@ -95,17 +97,18 @@ const WorkSection = () => {
           </p>
           <div className="cards_wrap py-5 sm:mt-35">
             <div className="overflow-hidden cards relative h-[27rem]">
-              <div
-                data-scroll
+              <motion.div 
+              whileHover={{opacity:0}}
+                data-scroll       
                 data-scroll-speed="-.2"
-                className="card_img  hover:opacity-0 z-1 absolute hidden sm:block top-0 left-0 w-full h-full"
+                className="card_img   z-1 absolute hidden sm:block top-0 left-0 w-full h-full"
               >
                 <img
                   className=" w-full h-full "
                   src="https://a.storyblok.com/f/133769/2409x3000/c155d3e27e/amaterasu-hero.jpg/m/1300x1619/filters:quality(90)"
                   alt=""
                 />
-              </div>
+              </motion.div>
               <div className="card_video w-full h-full">
                 <video
                   loop
@@ -130,10 +133,11 @@ const WorkSection = () => {
       <div className="second_div sm:flex justify-center items-end sm:gap-10">
         <div className="cards_wrap py-5">
           <div className="overflow-hidden cards relative h-[27rem] sm:h-[18rem]">
-            <motion.div
-              data-scroll
+            <motion.div 
+            whileHover={{opacity:0}}
+              data-scroll       
               data-scroll-speed="-.2"
-              className="card_img  hover:opacity-0 z-1 absolute hidden sm:block top-0 left-0 w-full h-full"
+              className="card_img   z-1 absolute hidden sm:block top-0 left-0 w-full h-full"
             >
               <img
                 className=" w-full h-full"
@@ -162,10 +166,11 @@ const WorkSection = () => {
         </div>
         <div className="cards_wrap py-5">
           <div className="overflow-hidden cards relative h-[27rem] sm:h-[35rem]">
-            <motion.div
-              data-scroll
+            <motion.div 
+            whileHover={{opacity:0}}
+              data-scroll       
               data-scroll-speed="-.2"
-              className="card_img absolute hover:opacity-0 z-1 hidden sm:block top-0 left-0 w-full h-full"
+              className="card_img absolute  z-1 hidden sm:block top-0 left-0 w-full h-full"
             >
               <img
                 className=" w-full h-full"
